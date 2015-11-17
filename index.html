@@ -1,0 +1,162 @@
+<!doctype html>
+
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ConectaTec</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <script src="js/vendor/modernizr.js"></script>
+    <script src="js/messages.js"></script>
+    <script src="js/enableCopies.js"></script>
+    <script src="js/dataMessage.js"></script>
+    <script src="js/sendEmail.js"></script>
+    <script src="js/idiomSelectors.js"></script>
+    <script src="js/restoreValues.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="row">
+        <div class="small-12 medium-12 large-12 columns">
+            <p id="timeSet" style="color:white; text-align:right;"></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <div class="panel">
+                <!--This div can be removed in case of design; change style of h1 too -->
+                <h1 style="color:#4c91c4;">Bienvenido a C.A.S.A.</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="large-12 columns">
+            <div class="panel">
+                <h3>¿Qué servicio necesitas? </h3>
+
+                <div class="large-12 columns">
+                    <form>
+                        <label>Selecciona uno:</label>
+                        <select id="documento" onchange="enableForCopies(); onUpdateDocs();">
+                            <option value="constancia">Constancia de Estudios</option>
+                            <option value="kardex">Kardex</option>
+                            <option value="ambos">Ambos</option>
+                        </select>
+                    </form>
+
+
+                    <div class="large-2 small-6 columns">
+                        <form>
+                            <label id="labelPrimerasCopias">¿Cuántas
+                                <br>Constancias?</label>
+                            <select id="copias" onchange="onUpdate()">
+                                <option value="unaC">1</option>
+                                <option value="dosC">2</option>
+                                <option value="tresC">3</option>
+                            </select>
+                        </form>
+                    </div>
+                    <div class="large-2 small-6 columns">
+                        <form>
+                            <label id="labelSegundasCopias">¿Cuántos
+                                <br>Kardex?</label>
+                            <select id="copias2" disabled onchange="onUpdate()">
+                                <option value="unaK">1</option>
+                                <option value="dosK">2</option>
+                                <option value="tresK">3</option>
+                            </select>
+                        </form>
+                    </div>
+
+                    <div id="boleta" class="large-12 medium-12 small-16 columns">
+                    </div>
+
+                    <div id="second" class="large-2 small-6 columns">
+                    </div>
+
+                    <div class="large-4 small-12 columns">
+                        <div data-brackets-id='623' class="large-6 medium-12 columns">
+                            <label data-brackets-id='624'>¿Lo necesitas en inglés?</label>
+                            <input data-brackets-id='625' id="checkbox1" type="checkbox" onclick="additionalIdioms()">
+                            <label data-brackets-id='626' for="checkbox1">Inglés</label>
+                        </div>
+                    </div>
+
+                    <div id="englishSelectConstancia" class="large-2 small-6 columns">
+                    </div>
+                    <div id="englishSelectKardex" class="large-2 small-6 columns">
+                    </div>
+
+                    <div class="large-12 columns">
+                        <div class="row collapse">
+                            <div class="small-1 large-1 columns">
+                                <span class="prefix">A</span>
+                            </div>
+                            <div class="small-11 large-11 columns">
+                                <input id="matricula" type="text" placeholder="01234567">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="large-5 medium-5 small-4 columns"></div>
+                            <div class="large-7 medium-7 small-9 columns">
+                                <a id="sendEmail" href="" class="small radius button" onclick="dataForMessage(); return false">Generar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        resetValues();
+    </script>
+
+    <div class="row">
+        <div class="large-12 columns">
+            <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
+            <footer class="footer">
+                <div class="row">
+                    <div class="large-12 columns">
+                        <p class="logo show-for-small-only"><i class="fi-target"></i> C.A.S.A.</p>
+                    </div>
+                    <div class=" large-12 columns">
+                        <p class="logo hide-for-small-only"><i class="fi-target"></i> C.A.S.A. </p>
+                        <p class="footer-links">
+                            <a></a>
+                            <a href="contacto.html">¿Tienes otras dudas? ¡Contáctanos!</a>
+                            <a></a>
+                        </p>
+                        <p class="copywrite">ITESM Chihuahua - 2015</p>
+                    </div>
+                </div>
+                <img src="./img/cintillo%20poweredby.png" style=" height:50px;">
+            </footer>
+        </div>
+    </div>
+
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script>
+        $(document).foundation();
+    </script>
+    <script type="text/javascript">
+        function setTime() {
+            var texto = "Hoy es ";
+            var date = new Date();
+            var fullDate = date.toLocaleString();
+            var fechaFinal = texto + fullDate;
+            $("#timeSet").text(fechaFinal);
+        }
+        window.onload = setTime;
+        setInterval(setTime, 1000);
+    </script>
+
+</body>
+
+</html>

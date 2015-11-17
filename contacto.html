@@ -1,0 +1,107 @@
+<!doctype html>
+
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ConectaTec</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <script src="js/vendor/modernizr.js"></script>
+    <script src="js/messages.js"></script>
+    <script src="js/dataMessage.js"></script>
+    <script src="js/sendEmail.js"></script>
+    <script src="js/sendEmailDoubt.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="row">
+        <div class="small-3 medium-3 large-3 columns">
+            <a href="index.html" style="color:#f0f0f0;"><img src="./img/arrow-left-out.png">
+            </a>
+        </div>
+        <div class="small-9 medium-9 large-9 columns">
+            <p id="timeSet" style="color:white; text-align:right;"></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-12 medium-12 large-12 columns panel">
+            <h2 style="color:#4c91c4;">¿Otras dudas?<br>¡Contáctanos!</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="large-12 columns">
+            <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
+            <header class="hero">
+                <h1></h1>
+                <h2 class="subheader"></h2>
+            </header>
+            <footer class="footer">
+                <div class="row">
+                    <div class="small-12 medium-6 medium-push-6 columns">
+                        <p class="logo show-for-small-only"><i class="fi-target"></i> C.A.S.A.</p>
+                        <form class="footer-form">
+                            <div class="row">
+                                <div class="medium-9 medium-push-3 columns">
+                                    <label>
+                                        <label class="contact">¿Otras dudas?
+                                            <br /> ¡Contactanos!</label>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="medium-9 medium-push-3 columns">
+                                    <label>
+                                        <textarea rows="5" id="messageDudas" placeholder="Mensaje"></textarea>
+                                    </label>
+                                </div>
+                                <div class="row">
+                                    <div class="medium-9 medium-push-3 columns">
+                                        <button class="submit" type="submit" value="Submit" onclick="sendDoubts(); return false">Generar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="small-12 medium-6 medium-pull-6 columns">
+                        <p class="logo hide-for-small-only"><i class="fi-target"></i> C.A.S.A. </p>
+                        <p class="footer-links">
+                            <a href="http://www.chi.itesm.mx/escolar/contacto/">C.A.S.A. Contacto</a>
+                            <a href="http://www.itesm.mx/wps/wcm/connect/Campus/CHI/Chihuahua">ITESM Chih.</a>
+                            <a href="http://www.chi.itesm.mx/escolar/inicio/">Escolar</a>
+                        </p>
+                        <ul class="inline-list social">
+                            <a href="https://www.facebook.com/itesmchihuahua"><i class="fi-social-facebook"></i></a>
+                            <a href="https://twitter.com/ITESMChihuahua"><i class="fi-social-twitter"></i></a>
+                        </ul>
+                        <p class="copywrite">ITESM Chihuahua - 2015</p>
+                    </div>
+
+                </div>
+                <img src="./img/cintillo%20poweredby.png" style=" height:50px;">
+            </footer>
+        </div>
+    </div>
+
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script>
+        $(document).foundation();
+    </script>
+    <script type="text/javascript">
+        function setTime() {
+            var texto = "Hoy es ";
+            var date = new Date();
+            var fullDate = date.toLocaleString();
+            var fechaFinal = texto + fullDate;
+            $("#timeSet").text(fechaFinal);
+        }
+        window.onload = setTime;
+        setInterval(setTime, 1000);
+    </script>
+
+</body>
+
+</html>
